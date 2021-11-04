@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <h1>Caculater</h1>
+    <table>
+        <tr>
+            <td colspan="2"><input type="text" id="so1" style="width: 200px"></td>
+            <td colspan="2"><input type="text" id="so2" style="width: 200px"></td>
+        </tr>
+        <tr>
+            <td><button type="button" onclick="click1()" id="cong">Addition(+)</button></td>
+            <td><button type="button" onclick="click2()" id="tru">Subtraction(-)</button></td>
+            <td><button type="button" onclick="click3()" id="nhan">Multiplication(x)</button></td>
+            <td><button type="button" onclick="click4()" id="chia">Division(/)</button></td>
+        </tr>
+        <tr>
+            <td colspan="2" id="result">Kết quả:</td>
+        </tr>
+    </table>
+</form>
+<script>
+    function click1() {
+        let a = parseInt(document.getElementById("so1").value);
+        let b = parseInt(document.getElementById("so2").value);
+        let c = a + b;
+        document.getElementById("result").innerHTML = "Kết quả tính cộng: " + c;
+    }
+    function click2() {
+        let d = parseInt(document.getElementById("so1").value);
+        let e = parseInt(document.getElementById("so2").value);
+        let f = d - e;
+        document.getElementById("result").innerHTML = "Kết quả tính trừ: " + f;
+    }
+    function click3() {
+        let g = parseInt(document.getElementById("so1").value);
+        let h = parseInt(document.getElementById("so2").value);
+        let s = g * h;
+        document.getElementById("result").innerHTML = "Kết quả tính nhân: " + s;
+    }
+    function click4() {
+        let t = parseInt(document.getElementById("so1").value);
+        let r = parseInt(document.getElementById("so2").value);
+        let o = t / r;
+        document.getElementById("result").innerHTML = "Kết quả tính chia: " + o;
+    }
+</script>
+</body>
+</html>
