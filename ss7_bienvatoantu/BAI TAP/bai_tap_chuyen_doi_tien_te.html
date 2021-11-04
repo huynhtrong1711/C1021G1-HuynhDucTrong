@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <table style="width: 40%">
+        <tr>
+            <th>Amount</th>
+            <th>Frorm Currency</th>
+            <th>To Currency</th>
+            <th></th>
+
+        </tr>
+        <tr>
+            <td><input type="text" id="input" style="width: 100px" ></td>
+
+            <td><select name="quốc gia" id="quocgia1" style="width: 100px">
+                <option value="VN">Việt Nam</option>
+                <option value="USA">USA</option></select></td>
+
+            <td><select name="quốc gia" id="quocgia2" style="width: 100px">
+                <option value="USA">USA</option>
+                <option value="VN">Việt Nam</option></select></td>
+
+            <td><button type="button" onclick="myFunction()" id="convert">Convert</button></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="result" colspan="4">KẾT QUẢ</td>
+        </tr>
+    </table>
+</form>
+<script>
+    function myFunction() {
+        let input = document.getElementById("input").value;
+        let quocgia1 = document.getElementById("quocgia1").value;
+        let quocgia2= document.getElementById("quocgia2").value;
+        let USA = input / 23000;
+        let VND = input * 23000;
+        let vnd = input;
+        let usa = input;
+        if (quocgia1 =="VN" && quocgia2 =="USA") {
+            document.getElementById("result").innerHTML = "Kết quả:" + USA + "USD";
+        } else if (quocgia1 =="USA" && quocgia2 =="VN") {
+            document.getElementById("result").innerHTML = "Kết quả:" + VND + "VND";
+        } else if (quocgia1 =="VN" && quocgia2 == "VN") {
+            document.getElementById("result").innerHTML = "Kết quả:" + vnd + "VND";
+        } else if (quocgia1 =="USA" && quocgia2 =="USA") {
+            document.getElementById("result").innerHTML = "Kết quả:" + usa + "USA"
+        }
+    }
+</script>
+
+</body>
+</html>
