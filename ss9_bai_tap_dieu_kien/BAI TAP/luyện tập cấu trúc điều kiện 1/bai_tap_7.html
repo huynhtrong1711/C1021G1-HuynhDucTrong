@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = parseInt(prompt("Nhập só phút gọi của gia đình bạn trong tháng"));
+    let b = a * 600;
+    if (a > 0 && a <= 50){
+        alert("Số tiền tháng này là: " + b + "Vnd" );
+    }else if (a > 50 && a <= 150){
+        alert("Số tiền tháng này là: " + (b + ((a-50)*400)) + "Vnd");
+    }else {
+        alert("Số tiền tháng này là: " + (b + (a-150)*200) + "Vnd")
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = parseInt(prompt("Nhập tổng doanh thu"));
+    let b = a * 0.05;
+    let c = a * 0.07;
+    let d = a * 0.1;
+    if (a >= 10000000 && a < 15000000){
+        alert("Hoa hồng của bạn là 5%, số tiền bạn nhận được là: " + b );
+    }else if (a >= 15000000 && a < 20000000){
+        alert("Hoa hồng của bạn là 7%, số tiền bạn nhận được là: " + c);
+    }else if (a >= 20000000) {
+        alert("Hoa hồng của bạn là 10%, số tiền bạn nhận được là: " + d)
+    }else {
+        alert("Doanh thu chưa được hưởng hoa hồng");
+    }
+</script>
+
+</body>
+</html>

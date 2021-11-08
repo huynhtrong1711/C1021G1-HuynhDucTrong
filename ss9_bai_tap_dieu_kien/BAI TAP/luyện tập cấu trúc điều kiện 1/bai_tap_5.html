@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = parseInt(prompt("Nhập điểm kiểm tra"));
+    let b = parseInt(prompt("Nhập điểm giữa kỳ"));
+    let c = parseInt(prompt("Nhập điểm cuối kỳ"));
+    let d = (a + b + c) / 3;
+    if (d >= 8.5){
+        document.write("Xếp loại giỏi");
+    }else if (d >= 6.5 && d < 8.5){
+        document.write("Xếp loại khá");
+    }else if (d >= 3.5 && d < 6.5){
+        document.write("Xếp loại trung bình");
+    }else {
+        document.write("Xếp loại yếu");
+    }
+</script>
+
+</body>
+</html>
