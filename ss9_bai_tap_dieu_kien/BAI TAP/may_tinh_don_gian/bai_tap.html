@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="">
+    <table border="1">
+        <tr>
+            <th id="outputNumber"></th>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td><button type="button" onclick="clickne()" id="1" value="1">1</button></td>
+            <td><button type="button" onclick="clickne()" id="2">2</button></td>
+            <td><button type="button" onclick="clickne()" id="3">3</button></td>
+            <td><button type="button" onclick="clickne()" >+</button></td>
+        </tr>
+        <tr>
+            <td><button type="button" onclick="clickne()">4</button></td>
+            <td><button type="button" onclick="clickne()">5</button></td>
+            <td><button type="button" onclick="clickne()">6</button></td>
+            <td><button type="button" onclick="clickne()">-</button></td>
+        </tr>
+        <tr>
+            <td><button type="button" onclick="clickne()">7</button></td>
+            <td><button type="button" onclick="clickne()">8</button></td>
+            <td><button type="button" onclick="clickne()">9</button></td>
+            <td><button type="button" onclick="clickne()">x</button></td>
+        </tr>
+        <tr>
+            <td><button type="button" onclick="clickne()">C</button></td>
+            <td><button type="button" onclick="clickne()">0</button></td>
+            <td><button type="button" onclick="clickne()">=</button></td>
+            <td><button type="button" onclick="clickne()">/</button></td>
+        </tr>
+    </table>
+</form>
+<script>
+    function clickne() {
+        function buttonChoose() {
+            let button1 = document.getElementById("1")
+            let button2 = document.getElementById("2")
+            let button3 = document.getElementById("3")
+        }
+        switch (buttonChoose()) {
+            case button1:
+                document.getElementById("outputNumber").innerHTML = 1
+        }
+
+    }
+</script>
+</body>
+</html>
