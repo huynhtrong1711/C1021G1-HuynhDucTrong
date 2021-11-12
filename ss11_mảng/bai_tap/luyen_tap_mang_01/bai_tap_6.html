@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = [ 15, 4, 5, 8, 7, 3, 10, 16, 25, 30];
+    let somoi = prompt("Nhập một phần tử");
+    for (let i = 0; i < number.length; i++){
+        number.push(somoi);
+        if (number[i] == somoi) {
+            alert(somoi + " đã có ở trong mảng");
+            break;
+        } else {
+            alert(somoi + " chưa nằm trong mảng");
+        }
+    }
+</script>
+</body>
+</html>

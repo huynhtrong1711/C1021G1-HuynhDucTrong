@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = [2, 5, 9, 10];
+    let max = 0;
+    let trungbinh = (number[0] + number[1] + number[2] + number[3]) / 4;
+    for (let i = 0; i < number.length; i++){
+        if (number[i] > max) {
+            max = number[i];
+        }
+    }
+    document.write("Giá trị lớn nhất là: " + max + "</br>");
+    document.write("Giá trị trung bình của các giá trị trong mảng là: " + trungbinh);
+</script>
+</body>
+</html>

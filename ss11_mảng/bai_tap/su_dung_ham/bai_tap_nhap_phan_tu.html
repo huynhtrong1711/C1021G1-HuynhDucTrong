@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = window.prompt();
+    let newnumber = number.toString();
+    let mang = [newnumber[0]];
+    for (let i = 1; i < newnumber.length; i++){
+        if ((newnumber[i - 1] % 2 ==0) && (newnumber[i] % 2 == 0)){
+            mang.push("-" + newnumber[i]);
+        }else {
+            mang.push(newnumber[i]);
+        }
+    }console.log(mang.join(""));
+</script>
+</body>
+</html>
