@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <table style="width: 40%">
+        <tr>
+            <th>Giá trị</th>
+            <th>Đơn vị</th>
+            <th>Đơn vị</th>
+            <th></th>
+
+        </tr>
+        <tr>
+            <td><input type="text" id="input" style="width: 100px" ></td>
+
+            <td><select name="donvi" id="donvi1" style="width: 100px">
+                <option value="meter">Meter</option>
+                <option value="feet">Feet</option></select></td>
+
+            <td><select name="donvi" id="donvi2" style="width: 100px">
+                <option value="feet">Feet</option>
+                <option value="meter">Meter</option></select></td>
+
+            <td><button type="button" onclick="myFunction()" id="convert">Convert</button></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="result" colspan="4">KẾT QUẢ:</td>
+        </tr>
+    </table>
+</form>
+<script>
+    function myFunction() {
+        let input = document.getElementById("input").value;
+        let donvi1 = document.getElementById("donvi1").value;
+        let donvi2= document.getElementById("donvi2").value;
+        let meter = input * 0.305;
+        let feet = input * 3.279;
+        let METER = input;
+        let FEET = input;
+        if (donvi1 =="meter" && donvi2 =="feet") {
+            document.getElementById("result").innerHTML = "Kết quả: " + feet + " Feet";
+        } else if (donvi1 =="feet" && donvi2 =="meter") {
+            document.getElementById("result").innerHTML = "Kết quả: " + meter + " Meter";
+        } else if (donvi1 =="meter" && donvi2 == "meter") {
+            document.getElementById("result").innerHTML = "Kết quả: " + METER + " Meter";
+        } else if (donvi1 =="feet" && donvi2 =="feet") {
+            document.getElementById("result").innerHTML = "Kết quả: " + FEET + " Feet";
+        }
+    }
+</script>
+</body>
+</html>
