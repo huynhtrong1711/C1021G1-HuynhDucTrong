@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <table>
+        <tr>
+            <td><input type="text" id="tu" style="width: 200px"></td>
+            <td><button type="button" id="timkiem" onclick="tim()">Tìm kiếm</button></td>
+        </tr>
+        <tr>
+            <td id="ketqua" colspan="2">Tên chòm sao:</td>
+        </tr>
+    </table>
+</form>
+    <script>
+        function tim() {
+            let input = document.getElementById("tu").value;
+            let english = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+            let vietnamese = ["Ursa", "Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+            let result = "";
+            for (let i = 0; i < english.length; i++){
+                if (input == english[i]) {
+                    result = "Tên chòm sao: " + input + " là: " + vietnamese[i];
+                    break;
+                } else {
+                    result = "Nghĩa: Không tìm thấy từ cùng nghĩa";
+                }
+            }
+            document.getElementById("ketqua").innerHTML = result;
+        }
+    </script>
+
+</body>
+</html>
