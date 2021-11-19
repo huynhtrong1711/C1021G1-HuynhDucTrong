@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Temperature {
+        constructor(doC) {
+            this.doC = doC;
+        }
+        doF(){
+            console.log("độ F là: " + (( 9 * this.doC) / 5 + 32));
+        }
+        kelvin(){
+            console.log("độ kelvin là: " + (this.doC + 273.15));
+        }
+    }
+    let newTemperature = new Temperature(29);
+    console.log(newTemperature);
+    newTemperature.doF();
+    newTemperature.kelvin();
+</script>
+</body>
+</html>
