@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <h1>MENU</h1>
+    <p id="1">1. Cafe</p>
+    <p id="2">2. Cam vắt</p>
+    <p id="3">3. Nước ép cà rốt</p>
+    <p id="4">4. Nước ép cà chua</p>
+    <p id="5">5. Nước lọc</p>
+    <p id="6">6. Nước dừa </p>
+    <button onclick="oder()">Oder nước uống</button>
+</form>
+<script>
+    let menu = ["Cafe", "Cam vắt", "Nước ép cà rốt", "Nước ép cà chua", "Nước lọc", "Nước dừa"];
+    let many = [12000, 17000, 20000, 20000, 7000, 17000];
+    function oder() {
+        let goi = prompt("vui lòng chọn loại nước uống");
+        for (let i = 0; i < menu.length; i++) {
+
+            if (goi == menu[i]) {
+                nuoc = parseInt(prompt(menu[i] + " có giá là: " + many[i] +". Mời bạn chọn số lượng muốn gọi:"))
+                alert("số tiền bạn cần phải trả là: " + many[i] * nuoc);
+                break;
+            }
+
+        }
+
+    }
+</script>
+</body>
+</html>

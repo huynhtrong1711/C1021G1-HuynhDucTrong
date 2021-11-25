@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class SwitchButton{
+        constructor(status) {
+            this.status = status;
+            this.lamp = "";
+        }
+        connectLamp(electricLamp){
+            this.lamp = electricLamp;
+        }
+    }
+    class Electriclamp{
+        constructor(status) {
+            this.status = status;
+        }
+        turnOn(switchObj){
+            if (switchO.status == "bat"){
+                this.status = switchO.status;
+                console.log("bật đèn");
+            }else {
+                this.status = switchO.status;
+                console.log("tắt đèn");
+            }
+        }
+    }
+    let switchO = new SwitchButton("bat");
+    let electric = new Electriclamp();
+    switchO.connectLamp(electric);
+    console.log(switchO);
+    for (let i = 0; i<5; i++){
+        console.log(electric.turnOn());
+        switchO.status = "tat";
+        console.log(electric.turnOn());
+        switchO.status = "bat";
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let luong = parseInt(prompt("nhập số lương chưa thuế của bạn:"));
+    let thue1 = luong * 0.05;
+    let thưe2 = luong * 0.1;
+    let thue3 = luong * 0.2;
+    if (luong < 7000000) {
+        luongmoi1 = luong - thue1;
+        alert("số tiền thuế bạn trả là: " + thue1);
+        alert("số tiền lương bạn nhận là: " + luongmoi1);
+    }else if (luong > 7000000 && luong < 15000000) {
+        luongmoi2 = luong - thưe2;
+        alert("số tiền thuế bạn trả là: " + thưe2);
+        alert("số tiền lương bạn nhận là: " + luongmoi2);
+    }else {
+        luongmoi3 = luong - thue3;
+        alert("số tiền thuế bạn trả là: " + thue3);
+        alert("số tiền lương bạn nhận là: " + luongmoi3);
+    }
+</script>
+</body>
+</html>

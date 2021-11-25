@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let i,j;
+    let sao = "*";
+    let chieucao = 5;
+    for (i = 1; i <= chieucao; i++) {
+        for (j = 1; j <= i; j++) {
+            if ( j == 1 || j == i || i == chieucao) {
+                document.writeln(sao);
+            } else {
+                document.writeln("&nbsp;&nbsp;");
+            }
+        }
+        document.writeln("<br>");
+
+    }
+
+</script>
+</body>
+</html>
