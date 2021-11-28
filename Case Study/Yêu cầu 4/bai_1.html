@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+function santadizad(name) {
+    name = name.trim().toLowerCase();
+    let nameArray = Array.from(name);
+    for (let i = 0; i < nameArray.length; i++) {
+        if (nameArray[i] === " " && nameArray[i + 1] === " ") {
+            for (let j = i + 1; j < nameArray.length; j++) {
+                nameArray[j] = nameArray[j + 1];
+
+            }
+            i--;
+            nameArray.pop();
+        }
+
+    }
+    nameArray[0] = nameArray[0].toUpperCase();
+    for (let i = 0; i < nameArray.length - 1; i++) {
+        if (nameArray[i] === " ") {
+            nameArray[i + 1] = nameArray[i + 1].toUpperCase();
+        }
+
+    }
+    return nameArray.join("")
+}
+function maxName(name) {
+    let arrname = name.split(" ");
+    let maxname = arrname[0];
+    for (let i = 0; i < arrname.length; i++) {
+        if (maxname.length < arrname[i].length) {
+            maxname = arrname[i];
+        }
+    }
+    return maxname;
+
+}
+let name = prompt("Nhập vào tên của bạn: ");
+alert("Tên ban đầu là: " + name +
+    "\n Tên chuẩn hóa là: " + santadizad(name) +
+    "\n Từ có độ dài nhất là: " + maxName(santadizad(name)));
+
+</script>
+</body>
+</html>

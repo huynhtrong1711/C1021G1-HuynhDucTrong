@@ -6,15 +6,18 @@
 </head>
 <body>
 <script>
-    let a = [3,5,8];
-    let b = [4,1,9];
-    if ((a[0] / b[0]) > (a[1] / b[1]) && (a[0] / b[0]) > (a[2] / b[2])) {
-        console.log(0);
-    } else if ((a[1] / b[1]) > (a[2] > b[2])) {
-        console.log(1);
-    }else {
-        console.log(2);
+    let a = [3,2,3,6,7,14,11,19,5,8];
+    let b = [4,1,9,14,15,12,8,9,4,6];
+    let max = 0;
+    let maxindex = 0;
+    for (let i = 0; i < a.length; i++) {
+        if ((a[i] / b[i]) > (a[i + 1] / b[i + 1])) {
+            max = (a[i] / b[i])
+            maxindex = i;
+        }
     }
+    console.log(maxindex + ' là vị trí của phân số lớn nhất');
+
 </script>
 </body>
 </html>

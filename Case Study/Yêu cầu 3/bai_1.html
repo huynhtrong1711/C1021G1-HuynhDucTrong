@@ -6,14 +6,18 @@
 </head>
 <body>
 <script>
-    let a = [1,4,7,2,8];
+    let a = [];
     let b = [];
-    b[0] = a[0];
-    b[1] = a[0] + a[1];
-    b[2] = a[0] + a[1] + a[2];
-    b[3] = a[0] + a[1] + a[2] + a[3];
-    b[4] = a[0] + a[1] + a[2] + a[3] + a[4];
-    console.log(b);
+    let temp = 0;
+    let n = parseInt(prompt("Nhập độ dài của mảng a"));
+    for (let i = 0; i < n; i++) {
+        a.push(parseInt(prompt("Nhập các số nguyên trong mảng a")));
+    }
+    for (let i = 0; i < a.length; i++) {
+        temp += a[i];
+        b.push(temp);
+    }
+    console.log("Mảng a là: " + a + "\n" + "Prefix sum mảng a: " + b);
 </script>
 </body>
 </html>
