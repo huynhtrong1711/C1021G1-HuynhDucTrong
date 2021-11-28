@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Remote{
+        constructor(CODE) {
+            this.CODE = CODE
+        }
+        changeChannel(TiviObj,channel) {
+            return TiviObj.channel = channel
+        }
+        turnOn(TiviObj){
+            return TiviObj.turnOn()
+        }
+        turnOff(TiviObj){
+            return TiviObj.turnOff()
+
+        }
+        volumeUp(TiviObj){
+            return TiviObj.volume++
+        }
+        volumeDown(TiviObj){
+            return TiviObj.volume--
+        }
+
+    }
+
+    class Tivi{
+        constructor(channel,volume,status) {
+            this.channel  = channel
+            this.volume = volume
+            this.status = status
+        }
+        changeChannel(channel){
+            return this.channel = channel
+        }
+        volumeUp(){
+            return this.volume += 1
+        }
+        volumeDowwn(){
+            return this.volume -= 1
+        }
+        turnOn(){
+            return this.status = true
+        }
+        turnOff(){
+            return this.status = false
+        }
+
+
+    }
+
+    let remoteSamsung = new Remote(1)
+    let tiviSamsung  = new Tivi(1, 30, false)
+    console.log(tiviSamsung.turnOn())
+    console.log(tiviSamsung.changeChannel(7))
+    console.log(remoteSamsung.changeChannel(tiviSamsung,3))
+    console.log(tiviSamsung.volumeDowwn())
+    console.log(tiviSamsung.volumeDowwn())
+    console.log(remoteSamsung.turnOff(tiviSamsung))
+</script>
+</body>
+</html>
