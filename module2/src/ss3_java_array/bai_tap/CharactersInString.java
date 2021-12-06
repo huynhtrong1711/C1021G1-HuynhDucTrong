@@ -14,6 +14,6 @@ public class CharactersInString {
                 count++;
             }
         }
-        System.out.println("Số lần suất hiện của ký tự trong chuỗi là: " + count);
+        System.out.println("Số lần suất hiện của ký tự " + characters + " trong chuỗi " + name + " là: " + count);
     }
 }
