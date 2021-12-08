@@ -46,7 +46,12 @@ public class MovablePoint extends Point{
 
     @Override
     public String toString() {
-        return "arrXY: " + super.getXY() + "speed = " + Arrays.toString(getSpeed());
+        return "arrXY: " + super.toString() + ", speed = " + Arrays.toString(getSpeed());
+    }
+    public MovablePoint move() {
+        this.setX(this.getX() + this.xSpeed);
+        this.setY(this.getY() + this.ySpeed);
+        return this;
     }
 
 }
