@@ -11,25 +11,22 @@ public class Main {
         double b = scanner.nextDouble();
         System.out.print("Nhập hằng số, c = ");
         double c = scanner.nextDouble();
-        
+        QuadraticEquation quadraticEquation = new QuadraticEquation(a,b,c);
         if (a == 0) {
             if (b == 0) {
-                System.out.println("Phườn trình vô nghiệm");
+                System.out.println("Phương trình vô nghiệm");
             }else {
                 System.out.println("Phương trình có một nghiệm x = " + (-c / b));
             }
+            return;
+
         }
-        double delta = b*b - 4*a*c;
-        double x1;
-        double x2;
-        if ( delta > 0) {
-            x1 = ((-b + Math.sqrt(delta)) / (2 * a));
-            x2 = ((-b - Math.sqrt(delta)) / (2 * a));
-            System.out.println("Phương trình có 2 nghiệm là: x1= " + x1 + "x2= " + x2);
-        }else if (delta < 0) {
-            x1 = (-b / (2*a));
-            System.out.println("Phương trình có 1 nghiệm là x= " + x1);
-        }else {
+        if (quadraticEquation.getDiscriminant() > 0) {
+            System.out.println("Phương trình có 2 nghiệm là: x1= " + quadraticEquation.getRoot1()
+                    + "x2= " + quadraticEquation.getRoot2());
+        } else if (quadraticEquation.getDiscriminant() < 0) {
+            System.out.println("Phương trình có 1 nghiệm là x= " + quadraticEquation.getRoot3());
+        } else {
             System.out.println("Phương trình vô nghiệm");
         }
     }
