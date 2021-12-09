@@ -7,8 +7,10 @@ public class SquareTest {
 
         square = new Square(2.3);
         System.out.println(square);
+        System.out.println(square.getArea());
 
         square = new Square(5.8, "yellow", true);
         System.out.println(square);
+        System.out.println(square.getArea());
     }
 }

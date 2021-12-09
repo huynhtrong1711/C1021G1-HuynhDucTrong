@@ -3,7 +3,7 @@ package ss1_introduction_to_Java.bai_tap;
 import java.util.Scanner;
 
 public class Number {
-    static String tu1den9(int number) {
+    static String zeroComeNine(int number) {
         String string = " ";
         switch (number) {
             case 0:
@@ -42,7 +42,7 @@ public class Number {
         }
         return string;
     }
-    static String tu10den19(int number){
+    static String tenComeNineteen(int number){
         String  string = " ";
         switch (number){
             case 11:
@@ -65,12 +65,12 @@ public class Number {
             case 18:
             case 19:
                 int donvi = number % 10;
-                string = tu1den9(donvi) +"teen";
+                string = zeroComeNine(donvi) +"teen";
                 break;
         }
         return string;
     }
-    static String tu20den99(int number){
+    static String twentyComeNinety(int number){
         String string = " ";
         switch (number){
             case 20:
@@ -90,7 +90,7 @@ public class Number {
             case 80:
             case 90:
                 int chuc = number / 10;
-                string = tu1den9(chuc) + "ty";
+                string = zeroComeNine(chuc) + "ty";
                 break;
         }
         return string;
@@ -102,15 +102,15 @@ public class Number {
         System.out.println("Enter a number");
         int number = scanner.nextInt();
         if (number > 0 && number <= 10){
-            String result = num.tu1den9(number);
+            String result = num.zeroComeNine(number);
             System.out.println(result);
         }else if (number > 10 && number < 20){
-            String result = num.tu10den19(number);
+            String result = num.tenComeNineteen(number);
             System.out.println(result);
         }else{
             int chuc =(number / 10) *10;
             int donvi = number % 10;
-            String result = num.tu20den99(chuc) + " " + num.tu1den9(donvi);
+            String result = num.twentyComeNinety(chuc) + " " + num.zeroComeNine(donvi);
             System.out.println(result);
         }
 

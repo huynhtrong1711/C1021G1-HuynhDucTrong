@@ -5,8 +5,8 @@ public class CircleTest {
         Circle circle = new Circle();
         System.out.println(circle);
 
-        circle = new Circle(3.5);
-        System.out.println(circle);
+        circle = new Circle(8);
+        System.out.println(circle.getArea());
 
         circle = new Circle(3.5, "indigo", false);
         System.out.println(circle);
