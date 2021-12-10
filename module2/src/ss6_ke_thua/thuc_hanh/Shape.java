@@ -1,6 +1,8 @@
 package ss6_ke_thua.thuc_hanh;
 
-public class Shape {
+import ss7_abstract_interface.bai_tap.interface_resizeable.Resizeable;
+
+public class Shape implements Resizeable {
     private String color = "green";
     private boolean filled = true;
 
@@ -34,5 +36,10 @@ public class Shape {
                 + getColor()
                 + " and "
                 + (isFilled() ? "filled" : "not filled");
+    }
+
+    @Override
+    public void resize(double percent) {
+        
     }
 }

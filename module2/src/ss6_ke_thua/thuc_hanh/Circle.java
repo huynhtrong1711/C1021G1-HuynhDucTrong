@@ -39,4 +39,8 @@ public class Circle extends Shape{
                 + super.toString();
     }
 
+    @Override
+    public void resize(double percent) {
+        this .radius = this.radius + this.radius * (percent / 100);
+    }
 }
