@@ -1,6 +1,6 @@
 package ss12_java_collection_framework.bai_tap.model;
 
-public class Product {
+public class Product implements Comparable<Product> {
     private int id;
     private String name;
     private int price;
@@ -30,7 +30,7 @@ public class Product {
         this.name = name;
     }
 
-    public double getPrice() {
+    public int getPrice() {
         return price;
     }
 
@@ -45,5 +45,10 @@ public class Product {
                 ", name='" + name + '\'' +
                 ", price=" + price +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Product o) {
+        return this.getPrice() - o.getPrice();
     }
 }
