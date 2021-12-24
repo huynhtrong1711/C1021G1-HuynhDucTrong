@@ -27,8 +27,6 @@ public class ProductController {
             switch (chose) {
                 case 1:
                     iProductService.addProduct();
-
-
                     break;
                 case 2:
                     iProductService.getProduct();

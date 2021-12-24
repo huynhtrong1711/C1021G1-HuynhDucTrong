@@ -61,7 +61,7 @@ public class ProductService implements IProductService {
         String description = scanner.nextLine();
         Product product = new Product(id, name, khanOP, price, description);
         products.add(product);
-writeProduct();
+        writeProduct();
     }
 
     @Override
