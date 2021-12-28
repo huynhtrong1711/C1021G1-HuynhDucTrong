@@ -1,8 +1,8 @@
 package case_study.sevirce.impt;
 
-import case_study.sevirce.IEmployeeService;
+import case_study.sevirce.IService;
 
-public class EmployeeService implements IEmployeeService {
+public class EmployeeService implements IService {
 
     @Override
     public void displayList() {
@@ -15,7 +15,7 @@ public class EmployeeService implements IEmployeeService {
     }
 
     @Override
-    public void editEmployee() {
+    public void edit() {
 
     }
 }

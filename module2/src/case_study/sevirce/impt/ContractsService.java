@@ -12,4 +12,19 @@ public class ContractsService implements IContractsService {
     public void displayListVoucher() {
 
     }
+
+    @Override
+    public void displayList() {
+
+    }
+
+    @Override
+    public void addNew() {
+
+    }
+
+    @Override
+    public void edit() {
+
+    }
 }

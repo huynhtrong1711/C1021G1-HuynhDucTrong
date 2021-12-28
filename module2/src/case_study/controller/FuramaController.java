@@ -45,7 +45,7 @@ public class FuramaController {
     }
 
     private static void employeeManagement() {
-        IEmployeeService iEmployeeService = new EmployeeService();
+        IService iEmployeeService = new EmployeeService();
         Scanner scanner = new Scanner(System.in);
         do {
             System.out.println("1. Display list employee. ");
@@ -61,7 +61,7 @@ public class FuramaController {
                     iEmployeeService.addNew();
                     break;
                 case 3:
-                    iEmployeeService.editEmployee();
+                    iEmployeeService.edit();
                     break;
                 case 4:
                     displayMainMenu();
@@ -73,7 +73,7 @@ public class FuramaController {
     }
 
     private static void customerManagement() {
-        ICustomerService iCustomerService = new CustomerService();
+        IService iCustomerService = new CustomerService();
         Scanner scanner = new Scanner(System.in);
         do {
             System.out.println("1. Display list customer. ");
@@ -89,7 +89,7 @@ public class FuramaController {
                     iCustomerService.addNew();
                     break;
                 case 3:
-                    iCustomerService.editEmployee();
+                    iCustomerService.edit();
                     break;
                 case 4:
                     displayMainMenu();
@@ -100,7 +100,7 @@ public class FuramaController {
     }
 
     private static void facilityManagement() {
-        IFacilityService iFacilityService = new FacilityService();
+        IService iFacilityService = new FacilityService();
         Scanner scanner = new Scanner(System.in);
         do {
             System.out.println("1. Display list facility. ");
@@ -116,7 +116,7 @@ public class FuramaController {
                     iFacilityService.addNew();
                     break;
                 case 3:
-                    iFacilityService.editFacility();
+                    iFacilityService.edit();
                     break;
                 case 4:
                     displayMainMenu();
@@ -191,7 +191,6 @@ public class FuramaController {
         } while (true);
 
     }
-
 
 
 

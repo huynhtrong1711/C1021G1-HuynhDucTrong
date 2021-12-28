@@ -1,8 +1,8 @@
 package case_study.sevirce.impt;
 
-import case_study.sevirce.IFacilityService;
+import case_study.sevirce.IService;
 
-public class FacilityService implements IFacilityService {
+public class FacilityService implements IService {
     @Override
     public void displayList() {
 
@@ -14,7 +14,7 @@ public class FacilityService implements IFacilityService {
     }
 
     @Override
-    public void editFacility() {
+    public void edit() {
 
     }
 }

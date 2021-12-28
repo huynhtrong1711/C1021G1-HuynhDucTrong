@@ -1,9 +1,9 @@
 package case_study.sevirce;
 
-public interface IFacilityService {
+public interface IService {
     void displayList();
 
     void addNew();
 
-    void editFacility();
+    void edit();
 }

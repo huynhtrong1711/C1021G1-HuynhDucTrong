@@ -1,10 +1,6 @@
 package case_study.sevirce;
 
-public interface IBookingService {
-    void addNew();
-
-    void displayList();
-
+public interface IBookingService extends IService{
     void createNew();
 
     void bookingManagement();

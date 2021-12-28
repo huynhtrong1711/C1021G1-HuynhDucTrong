@@ -9,6 +9,11 @@ public class BookingService implements IBookingService {
     }
 
     @Override
+    public void edit() {
+
+    }
+
+    @Override
     public void displayList() {
 
     }
