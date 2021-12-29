@@ -4,7 +4,7 @@ public abstract class Person {
     private int id;
     private String name;
     private String sex;
-    private int passport;
+    private String passport;
     private String phone;
     private String email;
     private String dayOfBirthday;
@@ -12,7 +12,7 @@ public abstract class Person {
     public Person() {
     }
 
-    public Person(int id, String name, String dayOfBirthday, String sex, int passport, String phone, String email) {
+    public Person(int id, String name, String dayOfBirthday, String sex, String passport, String phone, String email) {
         this.id = id;
         this.name = name;
         this.dayOfBirthday = dayOfBirthday;
@@ -48,11 +48,11 @@ public abstract class Person {
         this.sex = sex;
     }
 
-    public int getPassport() {
+    public String getPassport() {
         return passport;
     }
 
-    public void setPassport(int passport) {
+    public void setPassport(String passport) {
         this.passport = passport;
     }
 
@@ -88,6 +88,6 @@ public abstract class Person {
                 ", sex='" + sex + '\'' +
                 ", passport=" + passport +
                 ", phone=" + phone +
-                ", email='" + email + '\'';
+                ", email='" + email + '\'' + ", ";
     }
 }
