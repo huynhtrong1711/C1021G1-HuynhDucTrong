@@ -5,14 +5,14 @@ public abstract class Person {
     private String name;
     private String sex;
     private int passport;
-    private int phone;
+    private String phone;
     private String email;
-    private int dayOfBirthday;
+    private String dayOfBirthday;
 
     public Person() {
     }
 
-    public Person(int id, String name, int dayOfBirthday, String sex, int passport, int phone, String email) {
+    public Person(int id, String name, String dayOfBirthday, String sex, int passport, String phone, String email) {
         this.id = id;
         this.name = name;
         this.dayOfBirthday = dayOfBirthday;
@@ -56,11 +56,11 @@ public abstract class Person {
         this.passport = passport;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
@@ -72,24 +72,22 @@ public abstract class Person {
         this.email = email;
     }
 
-    public int getDayOfBirthday() {
+    public String getDayOfBirthday() {
         return dayOfBirthday;
     }
 
-    public void setDayOfBirthday(int dayOfBirthday) {
+    public void setDayOfBirthday(String dayOfBirthday) {
         this.dayOfBirthday = dayOfBirthday;
     }
 
     @Override
     public String toString() {
-        return "Person{" +
-                "id=" + id +
+        return "id=" + id +
                 ", name='" + name + '\'' +
                 ", dayOfBirthday=" + dayOfBirthday + '\'' +
                 ", sex='" + sex + '\'' +
                 ", passport=" + passport +
                 ", phone=" + phone +
-                ", email='" + email + '\'' +
-                '}';
+                ", email='" + email + '\'';
     }
 }

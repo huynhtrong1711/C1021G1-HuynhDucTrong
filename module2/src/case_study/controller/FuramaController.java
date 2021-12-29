@@ -45,7 +45,7 @@ public class FuramaController {
     }
 
     private static void employeeManagement() {
-        IService iEmployeeService = new EmployeeService();
+        EmployeeService iEmployeeService = new EmployeeService();
         Scanner scanner = new Scanner(System.in);
         do {
             System.out.println("1. Display list employee. ");
@@ -193,6 +193,8 @@ public class FuramaController {
     }
 
 
-
+    public static void main(String[] args) {
+        displayMainMenu();
+    }
 
 }
