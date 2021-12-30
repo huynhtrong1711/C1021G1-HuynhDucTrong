@@ -100,7 +100,7 @@ public class FuramaController {
     }
 
     private static void facilityManagement() {
-        IService iFacilityService = new FacilityService();
+        IFacilityService iFacilityService = new FacilityService();
         Scanner scanner = new Scanner(System.in);
         do {
             System.out.println("1. Display list facility. ");
@@ -110,10 +110,28 @@ public class FuramaController {
             int chose = scanner.nextInt();
             switch (chose) {
                 case 1:
-                    iFacilityService.displayList();
+                    iFacilityService.display();
                     break;
                 case 2:
-                    iFacilityService.addNew();
+                    System.out.println("1. Add New Villa.");
+                    System.out.println("2. Add New House.");
+                    System.out.println("3. Add New Room.");
+                    System.out.println("4. Back To Menu.");
+                    int check = scanner.nextInt();
+                    switch (check) {
+                        case 1:
+                            iFacilityService.addVilla();
+                            break;
+                        case 2:
+                            iFacilityService.addHouse();
+                            break;
+                        case 3:
+                            iFacilityService.addRoom();
+                            break;
+                        case 4:
+                            facilityManagement();
+                            break;
+                    }
                     break;
                 case 3:
                     iFacilityService.edit();
@@ -191,6 +209,8 @@ public class FuramaController {
         } while (true);
 
     }
+
+
 
 
     public static void main(String[] args) {

@@ -1,7 +1,8 @@
 package case_study.model.facility;
 
 public abstract class Facility {
-    private String idServiceName;
+    private String idFacility;
+    private String ServiceName;
     private int acreage;
     private int cost;
     private int numberOfPeople;
@@ -10,20 +11,13 @@ public abstract class Facility {
     public Facility() {
     }
 
-    public Facility(String serviceName, int acreage, int cost, int numberOfPeople, String rentType) {
-        this.idServiceName = serviceName;
+    public Facility(String idFacility, String serviceName, int acreage, int cost, int numberOfPeople, String rentType) {
+        this.idFacility = idFacility;
+        this.ServiceName = serviceName;
         this.acreage = acreage;
         this.cost = cost;
         this.numberOfPeople = numberOfPeople;
         this.rentType = rentType;
-    }
-
-    public String getIdServiceName() {
-        return idServiceName;
-    }
-
-    public void setIdServiceName(String idServiceName) {
-        this.idServiceName = idServiceName;
     }
 
     public int getAcreage() {
@@ -58,12 +52,29 @@ public abstract class Facility {
         this.rentType = rentType;
     }
 
+    public String getIdFacility() {
+        return idFacility;
+    }
+
+    public void setIdFacility(String idFacility) {
+        this.idFacility = idFacility;
+    }
+
+    public String getServiceName() {
+        return ServiceName;
+    }
+
+    public void setServiceName(String serviceName) {
+        ServiceName = serviceName;
+    }
+
     @Override
     public String toString() {
-        return "serviceName='" + idServiceName + '\'' +
+        return "idService=" + idFacility + '\'' +
+                "serviceName='" + ServiceName + '\'' +
                 ", acreage=" + acreage +
                 ", cost=" + cost +
                 ", numberOfPeople=" + numberOfPeople +
-                ", rentType=" + rentType + ", ";
+                ", rentType=" + rentType + ", R";
     }
 }
