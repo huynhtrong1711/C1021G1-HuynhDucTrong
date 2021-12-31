@@ -27,9 +27,8 @@ public class EmployeeService implements IService {
             Employee employee;
             while ((line = bufferedReader.readLine()) != null) {
                 temp = line.split(",");
-                employee = new Employee(Integer.parseInt(temp[0]), temp[1], temp[2], temp[3], temp[4], temp[5], temp[6], temp[7], temp[8], Integer.parseInt(temp[9]));
+                employee = new Employee(Integer.parseInt(temp[0]), temp[1], temp[2], temp[3], temp[4], temp[5], temp[6], temp[7], temp[8], Double.parseDouble(temp[9]));
                 employeeList.add(employee);
-
             }
             bufferedReader.close();
         } catch (IOException e) {
@@ -52,18 +51,13 @@ public class EmployeeService implements IService {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
-
-
 
     @Override
     public void displayList() {
         for (Employee employee : employees) {
             System.out.println(employee);
         }
-
     }
 
     @Override
@@ -234,8 +228,6 @@ public class EmployeeService implements IService {
             }
         }while (check);
 
-
-
         do {
             check = false;
             try {
@@ -249,8 +241,5 @@ public class EmployeeService implements IService {
         Employee employee = new Employee(idEmployee, inputName, inputDate, inputGender, inputIndetityCardNumber,
                 inputNumberPhone, inputEmail, inputQuatification, inputPosition, inputSalary);
         return employee;
-
-
     }
-
 }

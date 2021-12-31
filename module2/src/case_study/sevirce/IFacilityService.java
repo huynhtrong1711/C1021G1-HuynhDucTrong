@@ -9,6 +9,12 @@ public interface IFacilityService {
 
     void addRoom();
 
+    void displayVilla();
+
+    void displayHouse();
+
+    void displayRoom();
+
     void edit();
 
 }

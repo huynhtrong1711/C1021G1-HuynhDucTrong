@@ -3,12 +3,16 @@ package case_study.controller;
 import case_study.sevirce.*;
 import case_study.sevirce.impt.*;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class FuramaController {
+    static int chose;
+    static boolean checkChose;
     public static void displayMainMenu() {
         Scanner scanner = new Scanner(System.in);
         do {
+            checkChose = false;
             System.out.println(" MENU ");
             System.out.println("1. Employee Management. ");
             System.out.println("2. Customer Management. ");
@@ -16,7 +20,13 @@ public class FuramaController {
             System.out.println("4. Booking Management. ");
             System.out.println("5. Promotion Management. ");
             System.out.println("6. Exit. ");
-            int chose = scanner.nextInt();
+            try {
+               chose = Integer.parseInt(scanner.nextLine());
+            }catch (NumberFormatException e) {
+                System.out.println("Nhập không đúng định dạng! Xin nhập lại: ");
+                checkChose = true;
+                continue;
+            }
             switch (chose) {
                 case 1:
                     employeeManagement();
@@ -35,117 +45,171 @@ public class FuramaController {
                     break;
                 case 6:
                     System.exit(0);
-
             }
-
-        } while (true);
-
-
-
+        } while (checkChose);
     }
 
     private static void employeeManagement() {
         EmployeeService iEmployeeService = new EmployeeService();
         Scanner scanner = new Scanner(System.in);
         do {
+            checkChose = false;
             System.out.println("1. Display list employee. ");
             System.out.println("2. Add new employee. ");
             System.out.println("3. Edit employee. ");
             System.out.println("4. Return main menu. ");
-            int chose = scanner.nextInt();
+            try {
+                chose = Integer.parseInt(scanner.nextLine());
+            }catch (NumberFormatException e) {
+                System.out.println("Nhập không đúng định dạng! Xin nhập lại: ");
+                checkChose = true;
+                continue;
+            }
             switch (chose) {
                 case 1:
                     iEmployeeService.displayList();
-                    break;
+                    checkChose = true;
+                    continue;
                 case 2:
                     iEmployeeService.addNew();
-                    break;
+                    checkChose = true;
+                    continue;
                 case 3:
                     iEmployeeService.edit();
-                    break;
+                    checkChose = true;
+                    continue;
                 case 4:
                     displayMainMenu();
                     break;
             }
-
-
-        } while (true);
+        } while (checkChose);
     }
 
     private static void customerManagement() {
         IService iCustomerService = new CustomerService();
         Scanner scanner = new Scanner(System.in);
         do {
+            checkChose = false;
             System.out.println("1. Display list customer. ");
             System.out.println("2. Add new customer. ");
             System.out.println("3. Edit customer. ");
             System.out.println("4. Return main menu. ");
-            int chose = scanner.nextInt();
+            try {
+                chose = Integer.parseInt(scanner.nextLine());
+            } catch (InputMismatchException e) {
+                System.out.println("Nhập không đúng định dạng! Xin nhập lại: ");
+                checkChose = true;
+                continue;
+            }
             switch (chose) {
                 case 1:
                     iCustomerService.displayList();
-                    break;
+                    checkChose = true;
+                    continue;
                 case 2:
                     iCustomerService.addNew();
-                    break;
+                    checkChose = true;
+                    continue;
                 case 3:
                     iCustomerService.edit();
-                    break;
+                    checkChose = true;
+                    continue;
                 case 4:
                     displayMainMenu();
                     break;
             }
-
-        } while (true);
+        } while (checkChose);
     }
 
     private static void facilityManagement() {
         IFacilityService iFacilityService = new FacilityService();
         Scanner scanner = new Scanner(System.in);
         do {
+            checkChose = false;
             System.out.println("1. Display list facility. ");
             System.out.println("2. Add new facility. ");
-            System.out.println("3. Edit facility. ");
+            System.out.println("3. Display list facility maintenance. ");
             System.out.println("4. Return main menu. ");
-            int chose = scanner.nextInt();
+            try {
+                chose = Integer.parseInt(scanner.nextLine());
+            }catch (NumberFormatException e) {
+                System.out.println("Nhập không đúng định dạng! Xin nhập lại: ");
+                checkChose = true;
+                continue;
+            }
             switch (chose) {
                 case 1:
-                    iFacilityService.display();
-                    break;
+                    do {
+                        checkChose = false;
+                        System.out.println("1. Display Villa.");
+                        System.out.println("2. Display House.");
+                        System.out.println("3. Display Room.");
+                        System.out.println("4. Back To Menu.");
+                        try {
+                            chose = Integer.parseInt(scanner.nextLine());
+                        }catch (NumberFormatException e) {
+                            System.out.println("Nhập không đúng định dạng! Xin nhập lại: ");
+                            checkChose = true;
+                            continue;
+                        }
+                        switch (chose) {
+                            case 1:
+                                iFacilityService.displayVilla();
+                                break;
+                            case 2:
+                                iFacilityService.displayHouse();
+                                break;
+                            case 3:
+                                iFacilityService.displayRoom();
+                                break;
+                            case 4:
+                                facilityManagement();
+                                break;
+                        }
+                    }while (checkChose);
+                    checkChose = true;
+                    continue;
                 case 2:
-                    System.out.println("1. Add New Villa.");
-                    System.out.println("2. Add New House.");
-                    System.out.println("3. Add New Room.");
-                    System.out.println("4. Back To Menu.");
-                    int check = scanner.nextInt();
-                    switch (check) {
-                        case 1:
-                            iFacilityService.addVilla();
-                            break;
-                        case 2:
-                            iFacilityService.addHouse();
-                            break;
-                        case 3:
-                            iFacilityService.addRoom();
-                            break;
-                        case 4:
-                            facilityManagement();
-                            break;
-                    }
-                    break;
+                    do {
+                        checkChose = false;
+                        System.out.println("1. Add New Villa.");
+                        System.out.println("2. Add New House.");
+                        System.out.println("3. Add New Room.");
+                        System.out.println("4. Back To Menu.");
+                        try {
+                            chose = Integer.parseInt(scanner.nextLine());
+                        }catch (NumberFormatException e) {
+                            System.out.println("Nhập không đúng định dạng! Xin nhập lại: ");
+                            checkChose = true;
+                            continue;
+                        }
+                        switch (chose) {
+                            case 1:
+                                iFacilityService.addVilla();
+                                break;
+                            case 2:
+                                iFacilityService.addHouse();
+                                break;
+                            case 3:
+                                iFacilityService.addRoom();
+                                break;
+                            case 4:
+                                facilityManagement();
+                                break;
+                        }
+                    }while (checkChose);
+                    checkChose = true;
+                    continue;
                 case 3:
                     iFacilityService.edit();
-                    break;
+                    checkChose = true;
+                    continue;
                 case 4:
                     displayMainMenu();
                     break;
             }
-
-
-        } while (true);
+        } while (checkChose);
     }
-
-
 
     private static void bookingManagement() {
         IBookingService iBookingService = new BookingService();
@@ -177,12 +241,8 @@ public class FuramaController {
                 case 6:
                     displayMainMenu();
                     break;
-
             }
-
-
         } while (true);
-
     }
 
     private static void promotionManagement() {
@@ -204,17 +264,10 @@ public class FuramaController {
                     displayMainMenu();
                     break;
             }
-
-
         } while (true);
-
     }
-
-
-
 
     public static void main(String[] args) {
         displayMainMenu();
     }
-
 }

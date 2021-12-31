@@ -28,10 +28,8 @@ public class CustomerService implements IService {
                 temp = line.split(",");
                 customer = new Customer(Integer.parseInt(temp[0]), temp[1], temp[2], temp[3], temp[4], temp[6], temp[7], temp[8], temp[9]);
                 customers.add(customer);
-
             }
             bufferedReader.close();
-
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -42,7 +40,6 @@ public class CustomerService implements IService {
         try {
             FileWriter fileWriter = new FileWriter(FILE_CUSTOMER);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-
             for (Customer customer : customerList) {
                 bufferedWriter.write(customer.getId() + "," + customer.getName() + "," + customer.getDayOfBirthday() + "," +
                         customer.getSex() + "," + customer.getPassport() + "," + customer.getPhone() + "," + customer.getEmail() +
@@ -53,7 +50,6 @@ public class CustomerService implements IService {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     @Override
@@ -61,16 +57,12 @@ public class CustomerService implements IService {
         for (Customer customer : customerList) {
             System.out.println(customer);
         }
-
     }
 
     @Override
     public void addNew() {
         customerList.add(creatCustomer());
         writerCustomer();
-
-
-
     }
 
     @Override
@@ -85,15 +77,11 @@ public class CustomerService implements IService {
                 customerList.set(i, customer);
                 check = true;
                 break;
-
             }
-
             if (!check) {
                 System.out.println("không có khách hàng bạn cần tìm");
             }
-
         }
-
     }
 
     public Customer creatCustomer() {
@@ -153,7 +141,6 @@ public class CustomerService implements IService {
                         continue;
                     }
                 }
-
             }else if (Integer.parseInt(temp[1]) > 0 || Integer.parseInt(temp[1]) < 13){
                 if(Integer.parseInt(temp[0]) < 0 || Integer.parseInt(temp[0]) > 30) {
                     check = true;
@@ -162,7 +149,6 @@ public class CustomerService implements IService {
             }else {
                 check = true;
             }
-
         }while (check);
 
         do {
@@ -183,9 +169,7 @@ public class CustomerService implements IService {
                 System.out.println("Không định dạng! Xin nhập lại: ");
                 continue;
             }
-
         }while (check);
-
 
         do {check = false;
             System.out.println("Nhập số điện thoại: ");
@@ -217,13 +201,10 @@ public class CustomerService implements IService {
                 break;
             }
         }while (check);
-
         System.out.println("Nhập địa chỉ: ");
         inputAddress = scanner.nextLine();
-
         Customer customer = new Customer(idCustomer, inputName, inputDate, inputGender, inputIndetityCardNumber,
                 inputNumberPhone, inputEmail, inputCustomerType, inputAddress);
         return customer;
-
     }
 }
