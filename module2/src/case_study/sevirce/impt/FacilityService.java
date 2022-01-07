@@ -343,7 +343,7 @@ public class FacilityService implements IFacilityService {
         try {
             FileReader fileReader = new FileReader(FILE_VILA);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
-            String line = null;
+            String line;
             String temp[];
             Villa villa = null;
             while ((line = bufferedReader.readLine()) != null) {
@@ -390,13 +390,16 @@ public class FacilityService implements IFacilityService {
         try {
             FileReader fileReader = new FileReader(FILE_ROOM);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
-            String line = null;
+            String line;
             String temp[];
-            Room room;
+            Room room = null;
             while ((line = bufferedReader.readLine()) != null) {
                 temp = line.split(",");
                 room = new Room(temp[0], temp[1], Integer.parseInt(temp[2]), Integer.parseInt(temp[3]),
                         Integer.parseInt(temp[4]), temp[5], temp[6]);
+                roomIntegerMap.put(room, 1);
+            }
+            if (room != null) {
                 roomIntegerMap.put(room, 1);
             }
             bufferedReader.close();
