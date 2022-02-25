@@ -43,6 +43,7 @@ public class ImportService implements IService {
               temp = line.split(",");
               importProduct = new Import(temp[1],temp[2], Integer.parseInt(temp[3]), Integer.parseInt(temp[4]), temp[5],
                       Integer.parseInt(temp[6]), temp[7], Integer.parseInt(temp[8]));
+              importProduct.setId(Integer.parseInt(temp[0]));
               imports.add(importProduct);
           }
           bufferedReader.close();

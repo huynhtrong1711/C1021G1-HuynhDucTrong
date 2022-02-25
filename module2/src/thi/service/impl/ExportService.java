@@ -1,6 +1,7 @@
 package thi.service.impl;
 
 import thi.model.Export;
+import thi.model.Import;
 import thi.service.IService;
 
 import java.io.*;
@@ -44,6 +45,7 @@ public class ExportService implements IService {
                 temp = line.split(",");
                 export = new Export(temp[1],temp[2], Integer.parseInt(temp[3]), Integer.parseInt(temp[4]), temp[5],
                         Integer.parseInt(temp[6]), temp[7]);
+                export.setId(Integer.parseInt(temp[0]));
                 exports.add(export);
             }
             bufferedReader.close();
